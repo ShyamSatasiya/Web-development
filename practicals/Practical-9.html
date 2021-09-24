@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Circle</title> 
+    </head> 
+    <style>         *{         padding: 0;         margin: 0;         }         .buttons{ 
+            background-color: #14213d; 
+        }         #mybox{             width: 100%;             height: 100vh;             position: relative;             background-color: #14213d; 
+        } 
+        #myanimation{             width: 80px;             height: 80px;             border-radius: 50%;             position: absolute;             background-color: white;             box-shadow: 5px 5px 7px black; 
+        }         button{             margin: 10px;             padding: 10px;             color: white;             box-shadow: 2px 2px 5px white;             background-color: #111111;             border-radius: 20%; 
+        } 
+    </style> 
+<body> 
+    <div class="buttons"> 
+        <button onclick="myMove()">Start</button> 
+        <button onclick="stop()">Stop</button> 
+    </div> 
+ 
+    <div id="mybox"> 
+        <div id="myanimation"></div> 
+    </div> <script>     var id2;     var id3;     var id4;     var id;     var pos = 0;     var pos1 =0;     var pos2 = 500;     var pos3 = 500;     function myMove() {         var elem = document.getElementById("myanimation");            id = setInterval(frame,1); 
+                  function frame() {             if (pos == 1250) {                 clearInterval(id);                 id2 = setInterval(frame2, 1);                 pos1 = 0;             } else {                 pos++;  
+                elem.style.left = pos + 'px';  
+            }         }         function frame2() {             if (pos1 == 450) {                 clearInterval(id2);                 id3 = setInterval(frame3,1);                 pos2 = 350;             } else {                 pos1++;  
+                elem.style.top = pos1 + 'px';  
+            }         }         function frame3() {             if (pos2 == 0) {                 clearInterval(id3);                 id4 = setInterval(frame4,1);                 pos3 = 350;             } else {                 pos2--;  
+                elem.style.left = pos2 + 'px';  
+            }         }         function frame4() {             if (pos3 == 0) {                 clearInterval(id4);                 id = setInterval(frame,1); 
+                pos = 0;             } else {                 pos3--;      
+                elem.style.top = pos3 + 'px';  
+            } 
+        }     } 
+    function stop()  
+    {         clearInterval(id);         clearInterval(id2);         clearInterval(id3);         clearInterval(id4); 
+    } 
+</script> 
+</body> 
+</html>

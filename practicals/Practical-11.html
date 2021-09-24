@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student xmlns="http://www.w3.org/2001/XMLSchemainstance" xsi:noNamespaceSchemaLocation="jp.xsd">
+<name>Jaimin Mangroliya</name>
+<address>
+<area>Bapunagar,</area>
+<city>Ahmedabad,</city>
+<state>Gujarat</state>
+</address>
+<contact>
+<email>jaiminmangroliya@gmail.com</email><br>
+<mobile>9737263868</mobile>
+</contact>
+</student>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="student">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="address">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="area" type="xs:string"/>
+<xs:element name="city" type="xs:string"/>
+<xs:element name="state" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="contact">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="email" type="xs:string"/>
+<xs:element name="mobile" type="xs:unsignedLong"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
